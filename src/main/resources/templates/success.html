@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Centered box with border */
+        .center-box {
+            width: 50%;
+            margin: auto;
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container center-box">
+        <h2 class="text-center">Enrollment Details</h2>
+        <hr>
+
+        <!-- Plain Text Representation -->
+        <p><strong>Student Name:</strong><span th:text="${name}"></span> </p>
+        <p><strong>Email:</strong> <span th:text="${email}"></span></p>
+        <p><strong>Gender:</strong> <span th:text="${gender}"></span></p>
+        <p><strong>Course:</strong> <span th:text="${course}"></span></p>
+        <p><strong>Course Duration:</strong> <span th:text="${courseDuration}"></span></p>
+        <p><strong>Timings:</strong><span th:each="item : ${timings +' '}" th:text="${item}">,</span></p>
+        <p><strong>Note:</strong> Confirmation send to your email check your inbox</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
